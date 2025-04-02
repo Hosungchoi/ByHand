@@ -1,0 +1,175 @@
+* {
+    background-color: transparent; /* Removes any hidden backgrounds */
+}
+
+body {
+    font-family: "baskerville-urw", serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  
+}
+
+.logo-container img {
+    height: 40px;
+}
+
+.brand-text img {
+    height: 20px;
+}
+
+.main-banner {
+    width: 100vw; /* Full screen width */
+    height: 90vh; /* Almost full height, leaving some gap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFCFA; /* Match the background */
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures full coverage */
+}
+
+
+.content, .flavors, .tasting-notes, .survey, footer {
+    max-width: 800px;
+    margin: 20px auto;  /* Reduce margin */
+    text-align: center;
+}
+
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-image {
+    width: 100%;  /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.aligned-image {
+    width: 800px;  /* Set a fixed width */
+    height: auto;  /* Maintain aspect ratio */
+    display: block;  /* Ensure the image is a block-level element */
+    margin-left: auto;  /* Center horizontally */
+    margin-right: auto;  /* Center horizontally */
+}
+
+
+.content-text {
+    font-family: "baskerville-urw", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+.flavors {
+    height: auto; /* Change from 100vh */
+    padding: 20px 0; /* Add some padding instead */
+}
+
+
+
+.flavor-item img {
+    width: 100%; /* Adjust width to container */
+    max-width: 800px; /* Ensure it doesn't get too large */
+    height: auto;
+    margin: 0 auto; /* Center properly */
+}
+
+
+.flavor-title.lemon {
+    color: #f1c40f;
+}
+
+.flavor-title.orange {
+    color: #e67e22;
+}
+
+.survey form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea {
+    width: 100%;
+    max-width: 600px;
+    height: 100px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+.scroll-icon {
+    position: relative; /* Change from absolute to relative */
+    bottom: 10px; /* Adjust spacing */
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+    color: #509df0; /* Modern blue shade */
+    font-weight: 600;
+  }
+  
+  a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+
+@keyframes appear {
+    from {
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .content, .flavors, .tasting-notes {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }

@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palette</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gzu3lhw.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<body style="background-color: #FFFCFA;">
+    <header style="background-color: #FFFCFA;">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="{% static 'images/logo.png' %}" alt="Logo">
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class = "main-banner">
+            <img src="{% static 'images/banner.png' %}" alt="Tart Orange Cans" class="banner-image">
+        </section>
+        <br>
+        <br>
+        <br>
+        <section class="content">
+            <h2 class="section-title">
+                <img src="{% static 'images/Asset 2.png' %}" alt="What's Happening?" class="section-image" style="width: 300px; height: auto;">
+            </h2>
+            
+            <p class="content-text">High-quality alcoholic beverage options that don’t compromise on taste or experience?</p>
+            <p class="content-text">Bringing craft quality alternatives that rival freshly prepared drinks?</p>
+            <p class="content-text">A growing interest in diverse flavor profiles?</p>
+
+        </section>
+        
+        <section class="flavors">
+            <div class="flavor-item">
+                <img class="aligned-image" src="{% static 'images/Flavour_type_resized.jpg' %}" alt="Flavour type" style="margin-top:-10px; margin-bottom:-50px;">
+            </div>
+        </section>
+        
+        <section class="tasting-notes">
+            <h2 class="section-title">
+                <img src="{% static 'images/Asset 7.png' %}" alt="Redefining" class="section-image" style="width: 150px; height: auto;">
+            </h2>
+            <p class="content-text">Flavours do more than just taste gooood, we evoke emotions, memories, and personal interpretations.</p>
+            <p class="content-text">Each and one of you bring your own perspective and values, which shapes the perception of a drink.</p>
+            <p class="content-text">Sometimes in ways even the creator didn’t anticipate.</p>
+            <p class="content-text">With this in mind, we focus on adaptability ensuring our drinks align with real preferences.</p>
+            <p class="content-text">By incorporating emotional storytelling, we can craft experiences that feel personal and resonate deeply.</p>
+            
+        </section>
+        <br>
+        <br>
+        <br>
+
+        <section class="tasting-notes">
+            <h2 class="section-title">
+                <img src="{% static 'images/Asset 6.png' %}" alt="Palette Tasting Notes" class="section-image" style="width: 300px; height: auto;">
+            </h2>
+            <p class="content-text">Our options will align with health conscious lifestyles, affordability, and lower alcohol content.</p>
+            <p class="content-text">We aim to develop drinks shaped by real feedback, ensuring they evolve alongside shifting consumer preferences</p>
+            <p class="content-text">Anonymous artisan and a form of art, we will ensure to create drinks that truly resonate with our audience.</p>
+            <p class="content-text">Not everyone will love it, and that's okay. We will strive to make sure we get something right for you.</p>
+            
+        </section>
+        <br>
+        <br>
+        
+    </main>
+
+    <footer>
+        <section class="tasting-notes">
+            <hr>
+            <br>
+            <br>
+
+        <h2 class="section-title">
+            <img src="{% static 'images/Asset 5.png' %}" alt="What's next?" class="section-image" style="width: 300px; height: auto;">
+        </h2>
+        <p class="content-text">We invite you to share your thoughts on flavours and experiences that matter to you.</p>
+        <p class="content-text">By working together, we can craft exclusive drinks that redefine style.</p>
+        </section>
+        <br>
+        <br>
+        <section class="survey">
+            <h2 class="section-title"><strong>Your Drink, Your Story</strong></h2>
+            <form method="post" action="{% url 'submit_survey' %}">
+                {% csrf_token %}
+                
+                <label for="feedback"><strong>Tell us about your favourite drink!</strong> Share its name, brand (if any), how often you enjoy it, the flavours you love, and how it makes you feel.</label>
+                <textarea id="feedback" name="feedback" required></textarea>
+                <br>
+                <br>
+            
+                <label for="additional_feedback"><strong>Share a bit about yourself</strong> (e.g. openness to new experiences, artistic interests, decision-making style, and social preferences).</label>
+                <textarea id="additional_feedback" name="additional_feedback"></textarea> 
+            
+                <button type="submit">Submit</button>
+            </form>
+            
+            </form>
+        </section>
+        <br>
+                <br>
+                <br>
+        <section class="survey">
+            <h2>Share Your Drink Experience</h2>
+            <p>We’d love to hear more about your favorite drink! If you’re interested, you can fill out the full survey below</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFrvBV7Px6y4q_ufRMSwjvRE3MEBLkzO7JVuFJfKAiTfbfpA/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">
+                Click here to take the full survey
+            </a>
+        </section>
+    </footer>
+</body>
+</html>
